@@ -6,12 +6,13 @@ namespace KYapp.ConsoleFactoryGame
 {
     public static class Game
     {
-        private static int data;
+        public static GameData gameData = new GameData();
         
         
         public static void Main(string[] args)
         {
             Commands.Commands.Init();
+            Items.Items.Init();
             
             BackGround(100, Start, Update);
             
@@ -47,5 +48,13 @@ namespace KYapp.ConsoleFactoryGame
         {
             
         }
+    }
+
+    public class GameData
+    {
+        public string name;
+
+        public List<int> structures;
+        public List<int> inventory;
     }
 }

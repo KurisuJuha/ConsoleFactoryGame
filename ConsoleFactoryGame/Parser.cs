@@ -19,7 +19,7 @@ public static class Parser
         else
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("Error");
+            Console.WriteLine("CommandError");
             Console.ResetColor();
         }
     }
