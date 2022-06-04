@@ -11,8 +11,10 @@ namespace KYapp.ConsoleFactoryGame
         
         public static void Main(string[] args)
         {
+            Commands.Commands.Init();
+            
             BackGround(100, Start, Update);
-
+            
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;

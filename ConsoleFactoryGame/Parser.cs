@@ -2,19 +2,19 @@
 
 public static class Parser
 {
-    public static Dictionary<string, Action> Commands = new Dictionary<string, Action>();
+    public static Dictionary<string, Action<string[]>> Commands = new Dictionary<string, Action<string[]>>();
 
     public static void Parse(string command)
     {
         string[] _command = Split(command);
-        Action action;
+        Action<string[]> action;
 
         if (_command.Length < 1) return;
 
 
         if (Commands.TryGetValue(_command[0], out action))
         {
-            action();
+            action(_command[1.._command.Length]);
         }
         else
         {
@@ -28,6 +28,4 @@ public static class Parser
     {
         return command.Split(' ');
     }
-    
-    
 }
